@@ -12,7 +12,7 @@ To demonstrate how easily this can be achieved, Jupyter Notebook is used with tw
 
 Image features are extracted by VGG16 [6] model on Keras. VGG team achieved an excellent result with VGG16 model in ILSVRC- 2014 [2] competition. Image features are 1, 000 kinds of ImageNet classes(synsets) which are employed by VGG16 model. Image fea- tures which really mean ImageNet class tags are used as word fea- tures.  erefore, it is easy to modify using deep image representa- tions or other deep features.
 
-[synsets:http://image-net.org/challenges/LSVRC/2014/browse-synsets] (http://image-net.org/challenges/LSVRC/2014/browse-synsets)
+synsets:　http://image-net.org/challenges/LSVRC/2014/browse-synsets)
 
 The VGG16 model for Keras is pre-trained, which model of the 16-leyers network is used by the VGG team in the ILSVRC-2014. Keras with the VGG16 model calculates and returns tuple of class(synset) and probability from an image.  ere are pre-de ned 1,000 classes.  ese classes are used as features for a feature vector on Elasticsearch.
 
