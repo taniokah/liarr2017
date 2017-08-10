@@ -241,8 +241,6 @@ If you want to recreate the index, you need to delete the index.
 es.indices.delete(index='image-search')
 ````
 
-    {u'acknowledged': True}
-
 ### 3.8 Function Declaration for Search
 
 ````python
