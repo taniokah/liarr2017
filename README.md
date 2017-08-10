@@ -24,7 +24,7 @@ Bag-of-Visual-Words is employed for an index of a full-text search engine. Simil
   <img src="similarity.png" width="300"/>
 </p>
 
-where _j_ is the number of synset feature and _n_ is 1,000 as the amount of synset feature. _η__<sub>j</sub>_ is the _j_th synset feature score of a query image. _x_<sub>i</sub>{_i_, _j_}$ is the _j_th synset feature score of an indexed image.
+where _j_ is the number of synset feature and _n_ is 1,000 as the amount of synset feature. _η_ _<sub>j</sub>_ is the _j_ th synset feature score of a query image. _ξ_ <sub>i</sub>{_i_, _j_} is the _j_th synset feature score of an indexed image.
 
 ## 3. INSTALLATION
 
