@@ -132,7 +132,7 @@ for result in results:
 ````
 
 <p align="left">
-  <img src="predict-image.png" width="480"/>
+  <img src="predict-image.png" width="600"/>
 </p>
 
 ### 3.5 Load Libraries for Elasticsearch
