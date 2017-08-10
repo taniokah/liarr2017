@@ -150,7 +150,6 @@ model = VGG16(weights='imagenet')
 ### 3.3 Function Declaration for Keras
 
 ````python
-# Predict Function
 def predict(filename, featuresize):
     img = image.load_img(filename, target_size=(224, 224))
     x = image.img_to_array(img)
@@ -158,6 +157,14 @@ def predict(filename, featuresize):
     preds = model.predict(preprocess_input(x))
     results = decode_predictions(preds, top=featuresize)[0]
     return results
+
+def showimg(filename, title, i):
+    im = Image.open(filename)
+    im_list = np.asarray(im)
+    plt.subplot(2, 5, i)
+    plt.title(title)
+    plt.axis("off")
+    plt.imshow(im_list)
 ````
 
 ### 3.4 Predict Test
@@ -244,18 +251,6 @@ es.indices.delete(index='image-search')
 ### 3.8 Function Declaration for Search
 
 ````python
-from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
-
-def showimg(filename, title, i):
-    im = Image.open(filename)
-    im_list = np.asarray(im)
-    plt.subplot(2, 5, i)
-    plt.title(title)
-    plt.axis("off")
-    plt.imshow(im_list)
-
 def searchimg(filename, num):
     plt.figure(figsize=(20, 10))
     for i in range(1):
