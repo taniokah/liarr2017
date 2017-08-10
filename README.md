@@ -16,23 +16,23 @@ My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan 
 
 ### 2.1 Python
 
-[python](https://www.python.org/)
+https://www.python.org/
 
 ### 2.2 Elasticsearch
 
-[elastic](https://www.elastic.co/)
+https://www.elastic.co/
 
 ### 2.3 Keras
 
-[keras](https://keras.io/)
+https://keras.io/
 
 ### 2.4 Jupyter Notebook
 
-[Jupyter Notebook](http://jupyter.org/)
+http://jupyter.org/
 
 ### 2.5 TensorFlow
 
-[Jupyter Notebook](https://www.tensorflow.org/)
+https://www.tensorflow.org/
 
 ## 3. DEMONSTRATION
 
@@ -44,7 +44,7 @@ The indexing function is composed of Keras and Elasticsearch, which indexes dog 
 It's a competition to classify whether images contain either a dog or a cat. This is easy for humans, dogs, and cats, but computers will find it a bit more difficult.
 The training archive contains 25,000 images of dogs and cats. Train your algorithm on these files and predict the labels for test1.zip.
 
-[Kaggle](https://www.kaggle.com/c/dogs-vs-cats/data)
+https://www.kaggle.com/c/dogs-vs-cats/data
 
 You can download test1.zip and train.zip.
 
