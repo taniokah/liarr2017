@@ -1,6 +1,6 @@
 # Super Easy Way of Building Image Search with Keras
 
-Introduction of Deep Learning for Information Retrieval Researchers in __LIARR 2017, 11, Aug. 2017__
+Introduction of Deep Learning for Information Retrieval Researchers in __LIARR 2017__. (11, Aug. 2017)
 
 ## 1. ABSTRACT
 
@@ -25,6 +25,9 @@ My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan 
 ### 2.5 TensorFlow
 
 ## 3. DEMONSTRATION
+
+First of all, Kaggle dogs-vs-cats dataset should be downloaded on your machine.
+The indexing function is composed of Keras and Elasticsearch, which indexes dog and cat images as a search target. Keras plays a role of feature extraction.  Then, Elasticsearch has an index for image file retrieval.
 
 ### 3.1 Download Images
 
