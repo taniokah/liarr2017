@@ -91,9 +91,22 @@ https://www.kaggle.com/c/dogs-vs-cats/data
 You can download and unzip test1.zip and train.zip. Unzipped files are under 'test1' and 'train' directories.
 
     $ unzip test1.zip
-    
+    inflating: test1/1.jpg
+    inflating: test1/2.jpg
+    .
+    .
+    inflating: test1/9998.jpg          
+    inflating: test1/9998.jpg          
+    inflating: test1/9999.jpg      
+
     $ unzip train.zip
-    
+    inflating: train/cat.0.jpg
+    inflating: train/cat.1.jpg
+    .
+    .
+    inflating: train/dog.9997.jpg      
+    inflating: train/dog.9998.jpg      
+    inflating: train/dog.9999.jpg      
 
 For shorter indexing time, 220 images (110 dogs and 110 cats) are copied under 'train/mini' directory.
 
