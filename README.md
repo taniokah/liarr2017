@@ -249,7 +249,39 @@ def search(synsets, num):
 
 ### 3.9 Search Test
 
+````python
+filename = "dogs-vs-cats/test1/4.jpg"
+searchimg(filename, 10)
+````
+
 <p align="left">
-  <img src="search-cat.png" width="480"/>
+  <img src="search-cat.png" width="600"/>
+</p>
+
+````python
+filename = "dogs-vs-cats/test1/38.jpg"
+searchimg(filename, 10)
+````
+
+<p align="left">
+  <img src="search-dog.png" width="600"/>
+</p>
+
+````python
+filename = "dogs-vs-cats/train/mini/cat.7.jpg"
+searchimg(filename, 10)
+````
+
+<p align="left">
+  <img src="search-cat-in.png" width="600"/>
+</p>
+
+````python
+filename = "dogs-vs-cats/train/mini/dog.12466.jpg"
+searchimg(filename, 10)
+````
+
+<p align="left">
+  <img src="search-dog-in.png" width="600"/>
 </p>
 
