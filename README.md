@@ -88,7 +88,19 @@ The training archive contains 25,000 images of dogs and cats. Train your algorit
 
 https://www.kaggle.com/c/dogs-vs-cats/data
 
-You can download test1.zip and train.zip.
+You can download and unzip test1.zip and train.zip. Unzipped files are under 'test1' and 'train' directories.
+
+    $ unzip test1.zip
+    
+    $ unzip train.zip
+    
+
+For shorter indexing time, 220 images (110 dogs and 110 cats) are copied under 'train/mini' directory.
+
+    $ cd train
+    $ mkdir mini
+    $ for i in `seq 1 110`; do cp cat.$i.jpg mini; done
+    $ for i in `seq 12390 12499`; do cp dog.$i.jpg mini; done
 
 ### 3.2 Load Libraries for Keras
 
@@ -249,6 +261,8 @@ def search(synsets, num):
 
 ### 3.9 Search Test
 
+1. A cat image is the first query.
+
 ````python
 filename = "dogs-vs-cats/test1/4.jpg"
 searchimg(filename, 10)
@@ -257,6 +271,8 @@ searchimg(filename, 10)
 <p align="left">
   <img src="search-cat.png" width="600"/>
 </p>
+
+2. A dog image is the second query.
 
 ````python
 filename = "dogs-vs-cats/test1/38.jpg"
@@ -267,6 +283,8 @@ searchimg(filename, 10)
   <img src="search-dog.png" width="600"/>
 </p>
 
+3. Another cat image in indexed images is the third query.
+
 ````python
 filename = "dogs-vs-cats/train/mini/cat.7.jpg"
 searchimg(filename, 10)
@@ -275,6 +293,8 @@ searchimg(filename, 10)
 <p align="left">
   <img src="search-cat-in.png" width="600"/>
 </p>
+
+3. Another dog image in indexed images is the last one.
 
 ````python
 filename = "dogs-vs-cats/train/mini/dog.12466.jpg"
