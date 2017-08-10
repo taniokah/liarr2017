@@ -33,14 +33,23 @@ Download package for your platform. Extract .zip or tar.gz file cd into extracte
 
 https://www.elastic.co/
 
-If you want to check the version, just type 'curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"', after Elasticsearch has been launced.
+If you want to check the version, just type 'curl --silent -XGET http://localhost:9200 2>&1 | grep "number"', after Elasticsearch has been launched.
 
-    $ curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"
+    $ curl --silent -XGET http://localhost:9200 2>&1 | grep "number"
         "number" : "5.4.1",
 
 ### 2.3 Keras
 
+Keras is the Python deep learning library. Keras is compatible with: Python 2.7-3.5 now.
+Instalation is written in the following URL.
+
 https://keras.io/
+
+If you want to check the version, just type 'python -c "import keras; print keras.__version__"'.
+
+    $ python -c "import keras; print keras.__version__"
+    Using TensorFlow backend.
+    2.0.4
 
 ### 2.4 Jupyter Notebook
 
