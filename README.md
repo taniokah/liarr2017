@@ -47,5 +47,7 @@ The indexing function is composed of Keras and Elasticsearch, which indexes dog 
 
 ### 3.9 Search Test
 
-
+<p align="left">
+  <img src="search-cat.png" width="350"/>
+</p>
 
