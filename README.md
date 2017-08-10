@@ -8,6 +8,14 @@ This paper provides detailed suggestions to create an Image Search Engine with D
 
 To demonstrate how easily this can be achieved, Jupyter Notebook is used with two open source libraries, Keras and Elasticsearch.  en, the image search engine can search relevant images by images or keywords. In our approach, keras is regarded as analysis which is a process of converting an image into tokens or terms which are added to the inverted index for searching.
 
+## 2. FEATURES
+
+Image features are extracted by VGG16 [6] model on Keras. VGG team achieved an excellent result with VGG16 model in ILSVRC- 2014 [2] competition. Image features are 1, 000 kinds of ImageNet classes(synsets) which are employed by VGG16 model. Image fea- tures which really mean ImageNet class tags are used as word fea- tures.  erefore, it is easy to modify using deep image representa- tions or other deep features.
+
+[synsets:http://image-net.org/challenges/LSVRC/2014/browse-synsets] (http://image-net.org/challenges/LSVRC/2014/browse-synsets)
+
+The VGG16 model for Keras is pre-trained, which model of the 16-leyers network is used by the VGG team in the ILSVRC-2014. Keras with the VGG16 model calculates and returns tuple of class(synset) and probability from an image.  ere are pre-de ned 1,000 classes.  ese classes are used as features for a feature vector on Elasticsearch.
+
 ## 2. INSTALLATION
 
 We have to install some libraries: Python, Elasticsearch, Keras, Jupyter Notebook, and TensorFlow. Jupyter Notebook and TensorFlow are optional, because Jupyter Notebook is used for my demonstration and Theano or CNTK is available for Kearas instead of TensorFlow.
@@ -318,3 +326,11 @@ searchimg(filename, 10)
   <img src="search-dog-in.png" width="600"/>
 </p>
 
+## REFERENCE
+
+1. elastic. 2017. Elasticsearch: RESTful, Distributed Search & Analytics. (2017). https://www.elastic.co/ [Online; accessed 19-June-2017].
+2. ImageNet. 2014. Large Scale Visual Recognition Challenge (ILSVRC). (2014). http://www.image-net.org/challenges/LSVRC/
+3. Jupyter. 2017.  e Jupyter Notebook. (2017). h p://jupyter.org/ [Online; ac- cessed 19-June-2017].
+4. Kaggle. 2014. Dogs vs. Cats. (2014). https://www.kaggle.com/c/dogs-vs-cats
+5. keras. 2014. Keras:  e Python Deep Learning library. (2014). h ps://keras.io/ [Online; accessed 19-June-2017].
+6. Karen Simonyan and Andrew Zisserman. 2014. Very Deep Convolutional Networks for Large-Scale Image Recognition. CoRR abs/1409.1556 (2014). http://arxiv.org/abs/1409.1556
