@@ -16,13 +16,23 @@ My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan 
 
 ### 2.1 Python
 
+[python](https://www.python.org/)
+
 ### 2.2 Elasticsearch
+
+[elastic](https://www.elastic.co/)
 
 ### 2.3 Keras
 
+[keras](https://keras.io/)
+
 ### 2.4 Jupyter Notebook
 
+[Jupyter Notebook](http://jupyter.org/)
+
 ### 2.5 TensorFlow
+
+[Jupyter Notebook](https://www.tensorflow.org/)
 
 ## 3. DEMONSTRATION
 
@@ -30,6 +40,13 @@ First of all, Kaggle dogs-vs-cats dataset should be downloaded on your machine.
 The indexing function is composed of Keras and Elasticsearch, which indexes dog and cat images as a search target. Keras plays a role of feature extraction.  Then, Elasticsearch has an index for image file retrieval.
 
 ### 3.1 Download Images
+
+It's a competition to classify whether images contain either a dog or a cat. This is easy for humans, dogs, and cats, but computers will find it a bit more difficult.
+The training archive contains 25,000 images of dogs and cats. Train your algorithm on these files and predict the labels for test1.zip.
+
+[Kaggle](https://www.kaggle.com/c/dogs-vs-cats/data)
+
+You can download test1.zip and train.zip.
 
 ### 3.2 Load Libraries for Keras
 
