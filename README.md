@@ -131,16 +131,9 @@ for result in results:
     print(result)
 ````
 
-    (u'n02112137', u'chow', 0.67588288)
-    (u'n02108551', u'Tibetan_mastiff', 0.057198402)
-    (u'n02106662', u'German_shepherd', 0.037351418)
-    (u'n02099601', u'golden_retriever', 0.028765578)
-    (u'n02096294', u'Australian_terrier', 0.022860287)
-    (u'n02106030', u'collie', 0.020240849)
-    (u'n02112018', u'Pomeranian', 0.015477177)
-    (u'n02094258', u'Norwich_terrier', 0.01475124)
-    (u'n02113023', u'Pembroke', 0.014505378)
-    (u'n02097474', u'Tibetan_terrier', 0.013426904)
+<p align="left">
+  <img src="predict-image.png" width="480"/>
+</p>
 
 ### 3.5 Load Libraries for Elasticsearch
 
