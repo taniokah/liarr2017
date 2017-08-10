@@ -16,13 +16,26 @@ synsets:　http://image-net.org/challenges/LSVRC/2014/browse-synsets)
 
 The VGG16 model for Keras is pre-trained, which model of the 16-leyers network is used by the VGG team in the ILSVRC-2014. Keras with the VGG16 model calculates and returns tuple of class(synset) and probability from an image.  ere are pre-de ned 1,000 classes.  ese classes are used as features for a feature vector on Elasticsearch.
 
-## 2. INSTALLATION
+## 3. ALGORITHMS
+
+Bag-of-Visual-Words is employed for an index of a full-text search engine. Similarity is based on inner product of two vectors. A vector is query image vector is constituted of image features. Another vector is indexed image vector is also constituted of image features. A document contains filename and synset which consists of wind, words, and score from predicted information by Keras. Then, search engine calculates relevance scores based on inner product as similarity between images. So, relevance score is as follows,
+
+````math
+\begin{eqnarray}
+  sim(\eta ,\xi_i) = \sum_{i,j=1}^{n} \eta_j \cdot \xi_{i, j}
+  \label{eq:1}
+\end{eqnarray}
+````
+
+where $j$ is the number of synset feature and $n$ is $1,000$ as the amount of synset feature. $\eta_j$ is the $j$th synset feature score of a query image. $\xi_{i, j}$ is the $j$th synset feature score of an indexed image.
+
+## 3. INSTALLATION
 
 We have to install some libraries: Python, Elasticsearch, Keras, Jupyter Notebook, and TensorFlow. Jupyter Notebook and TensorFlow are optional, because Jupyter Notebook is used for my demonstration and Theano or CNTK is available for Kearas instead of TensorFlow.
 
 My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan (version 10.11), Python 2.7.13 <Anaconda 4.3.1 (x86_64)>, Elasticsearch 5.4.1, Keras 2.0.4, Jupyter Notebook 4.2.1, and TensorFlow 1.1.0 are installed. I guess Python 3+ is OK and Elasticsearch 2+ is also OK. Of course, Linux and Windows are both OK.
 
-### 2.1 Python
+### 3.1 Python
 
 Python is a programming language that lets you work quickly and integrate systems more effectively. 
 You can download the latest version Python 3.6.2 or Python 2.7.13. Also, Python source code and installers are available for download for all versions.
