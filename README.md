@@ -65,6 +65,6 @@ You can download test1.zip and train.zip.
 ### 3.9 Search Test
 
 <p align="left">
-  <img src="search-cat.png" width="350"/>
+  <img src="search-cat.png" width="480"/>
 </p>
 
