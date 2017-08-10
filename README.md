@@ -26,13 +26,15 @@ My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan 
 
 ### Download Images
 
-### Load Libraries
+### Load Libraries for Keras
 
 ### Function Declaration for Keras
 
 ### Predict Test
 
-### Load and Setting Elasticsearch
+### Load Libraries for Elasticsearch
+
+### Setting for Elasticsearch
 
 ### Function Declaration for Search
 
