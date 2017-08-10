@@ -33,7 +33,7 @@ Download package for your platform. Extract .zip or tar.gz file cd into extracte
 
 https://www.elastic.co/
 
-If you want to check the version, just type 'curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"'.
+If you want to check the version, just type 'curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"', after Elasticsearch has been launced.
 
     $ curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"
         "number" : "5.4.1",
