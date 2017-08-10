@@ -16,7 +16,15 @@ My demo environment is MacBook Pro (Retina, 15-inch, Mid 2015). OS X El Capitan 
 
 ### 2.1 Python
 
+Python is a programming language that lets you work quickly and integrate systems more effectively. 
+You can download the latest version Python 3.6.2 or Python 2.7.13. Also, Python source code and installers are available for download for all versions.
+
 https://www.python.org/
+
+If you want to check the version, just type 'python -V'.
+
+    $ python -V
+    Python 2.7.13 :: Anaconda 4.3.1 (x86_64)
 
 ### 2.2 Elasticsearch
 
