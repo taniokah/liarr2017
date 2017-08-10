@@ -66,7 +66,15 @@ If you want to check the version, just type 'jupyter --version'.
 
 ### 2.5 TensorFlow
 
-https://www.tensorflow.org/
+TensorFlow is an open-source software library for Machine Intelligence, which can be used for backend of Keras.
+The following URL explains how to install a version of TensorFlow that enables you to write applications in Python.
+
+https://www.tensorflow.org/install/
+
+If you want to check the version, just type 'python -c "import tensorflow as tf; print(tf.__version__)"'.
+
+    $ python -c "import tensorflow as tf; print(tf.__version__)"
+    1.1.0
 
 ## 3. DEMONSTRATION
 
