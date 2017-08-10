@@ -92,6 +92,14 @@ You can download test1.zip and train.zip.
 
 ### 3.2 Load Libraries for Keras
 
+    # Load libraries
+    from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
+    from keras.preprocessing import image
+    import numpy as np
+    import sys
+    
+    model = VGG16(weights='imagenet')
+
 ### 3.3 Function Declaration for Keras
 
 ### 3.4 Predict Test
