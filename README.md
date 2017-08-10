@@ -92,7 +92,7 @@ You can download test1.zip and train.zip.
 
 ### 3.2 Load Libraries for Keras
 
-```` Load Libraries for Keras
+````python
 # Load libraries
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
