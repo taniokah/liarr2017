@@ -20,12 +20,7 @@ The VGG16 model for Keras is pre-trained, which model of the 16-leyers network i
 
 Bag-of-Visual-Words is employed for an index of a full-text search engine. Similarity is based on inner product of two vectors. A vector is query image vector is constituted of image features. Another vector is indexed image vector is also constituted of image features. A document contains filename and synset which consists of wind, words, and score from predicted information by Keras. Then, search engine calculates relevance scores based on inner product as similarity between images. So, relevance score is as follows,
 
-````math
-\begin{eqnarray}
-  sim(\eta ,\xi_i) = \sum_{i,j=1}^{n} \eta_j \cdot \xi_{i, j}
-  \label{eq:1}
-\end{eqnarray}
-````
+![equation](http://latex.codecogs.com/gif.latex?sim(\eta,\xi_i)=\sum_{i,j=1}^{n}\eta_j\cdot\xi_{i, j})
 
 where $j$ is the number of synset feature and $n$ is $1,000$ as the amount of synset feature. $\eta_j$ is the $j$th synset feature score of a query image. $\xi_{i, j}$ is the $j$th synset feature score of an indexed image.
 
