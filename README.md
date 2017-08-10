@@ -1,8 +1,6 @@
 # Super Easy Way of Building Image Search with Keras
 
-Introduction of Deep Learning for Information Retrieval Researchers in LIARR 2017.
-
-__It's my first presentaion in LIARR 2017, 11, Aug. 2017__
+Introduction of Deep Learning for Information Retrieval Researchers in __LIARR 2017, 11, Aug. 2017__
 
 ## 1. ABSTRACT
 
