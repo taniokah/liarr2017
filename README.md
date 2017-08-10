@@ -96,6 +96,8 @@ You can download test1.zip and train.zip.
 # Load libraries
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
+from PIL import Image
+import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
@@ -104,15 +106,153 @@ model = VGG16(weights='imagenet')
 
 ### 3.3 Function Declaration for Keras
 
+````python
+# Predict Function
+def predict(filename, featuresize):
+    img = image.load_img(filename, target_size=(224, 224))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    preds = model.predict(preprocess_input(x))
+    results = decode_predictions(preds, top=featuresize)[0]
+    return results
+````
+
 ### 3.4 Predict Test
+
+````python
+# Predict an image
+filename = "dogs-vs-cats/train/mini/cat.6.jpg"
+plt.figure(figsize=(20, 10))
+for i in range(1):
+    showimg(filename, "query", i+1)
+plt.show()
+results = predict(filename, 10)
+for result in results:
+    print(result)
+````
+
+    (u'n02112137', u'chow', 0.67588288)
+    (u'n02108551', u'Tibetan_mastiff', 0.057198402)
+    (u'n02106662', u'German_shepherd', 0.037351418)
+    (u'n02099601', u'golden_retriever', 0.028765578)
+    (u'n02096294', u'Australian_terrier', 0.022860287)
+    (u'n02106030', u'collie', 0.020240849)
+    (u'n02112018', u'Pomeranian', 0.015477177)
+    (u'n02094258', u'Norwich_terrier', 0.01475124)
+    (u'n02113023', u'Pembroke', 0.014505378)
+    (u'n02097474', u'Tibetan_terrier', 0.013426904)
 
 ### 3.5 Load Libraries for Elasticsearch
 
-### 3.6 Setting for Elasticsearch
+````python
+import os
+from path import Path
+from elasticsearch import Elasticsearch
 
-### 3.7 Function Declaration for Search
+es = Elasticsearch(host='localhost', port=9200)
+````
 
-### 3.8 Index Images
+### 3.6 Function Declaration for Index
+
+````python
+def createindex(indexname):
+    if es.indices.exists(index=indexname):
+        es.indices.delete(index=indexname)
+    es.indices.create(index=indexname,  body={
+        "index.mapping.total_fields.limit": 10000
+    })
+
+def loadimages(directory):
+    imagefiles = []
+    for file in os.listdir(directory):
+        filepath = os.path.join(directory, file)
+        imagefiles.append(filepath)
+    return imagefiles
+
+def indexfiles(directory, featuresize=10):
+    imagefiles = loadimages(directory)
+    for i in range(len(imagefiles)):
+        filename = imagefiles[i]
+        indexfile(filename, i, featuresize)
+    es.indices.refresh(index="image-search")    
+
+def indexfile(filename, i, featuresize):
+    doc = {'filename': filename, 'synset':{}}
+    results = predict(filename, featuresize) 
+    for result in results:
+        synset = doc['synset']
+        synset[result[1]] = {
+            'wnid': result[0], 
+            'words': result[1], 
+            'score': float(str(result[2]))
+        }
+    count = es.count(index='image-search', doc_type='image')['count']
+    res = es.index(index="image-search", doc_type='image', id=(count + i), body=doc)
+````
+
+### 3.7 Index Images
+
+````python
+createindex("image-search")
+
+directory = "dogs-vs-cats/train/"
+indexfiles(directory, 1000)
+````
+
+If you want to recreate the index, you need to delete the index.
+
+````python
+es.indices.delete(index='image-search')
+````
+
+    {u'acknowledged': True}
+
+### 3.8 Function Declaration for Search
+
+````python
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+
+def showimg(filename, title, i):
+    im = Image.open(filename)
+    im_list = np.asarray(im)
+    plt.subplot(2, 5, i)
+    plt.title(title)
+    plt.axis("off")
+    plt.imshow(im_list)
+
+def searchimg(filename, num):
+    plt.figure(figsize=(20, 10))
+    for i in range(1):
+        showimg(filename, "query", i+1)
+    plt.show()
+    results = predict(filename, num)
+    search(results, num)
+
+def search(synsets, num):
+    inline = "1.000";
+    for synset in synsets:
+        words = synset[1]
+        score = synset[2]
+        inline += " + doc['synset." + words + ".score'].value * " + str(score)
+    res = es.search(index="image-search", doc_type='image', body={
+        "query": {
+            "function_score": {
+                "query": {"match_all": {}},
+                "script_score" : {"script" : {"inline": inline}}
+        }}})
+    
+    print("Got %d Hits:" % res['hits']['total'])
+    for hit in res['hits']['hits'][0:num]:
+        print "%s: %s [%s]" % (hit["_id"], hit["_source"]["filename"], hit["_score"])
+    plt.figure(figsize=(20, 10))
+    
+    for i in range(len(res['hits']['hits'][0:num])):
+        hit = res['hits']['hits'][0:num][i]
+        showimg(hit["_source"]["filename"], hit["_id"], i+1)
+    plt.show()
+````
 
 ### 3.9 Search Test
 
