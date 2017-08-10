@@ -1,4 +1,4 @@
 # liarr2017
 
-It's a first presentaion.
+It's my first presentaion in LIARR 2017.
 
