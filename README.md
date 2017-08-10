@@ -28,7 +28,15 @@ If you want to check the version, just type 'python -V'.
 
 ### 2.2 Elasticsearch
 
+Elasticsearch is an open source search engine based on Lucene.
+Download package for your platform. Extract .zip or tar.gz file cd into extracted folder.
+
 https://www.elastic.co/
+
+If you want to check the version, just type 'curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"'.
+
+    $ curl --silent -XGET 'http://localhost:9200' 2>&1 | grep "number"
+        "number" : "5.4.1",
 
 ### 2.3 Keras
 
