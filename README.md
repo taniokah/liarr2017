@@ -4,17 +4,17 @@ Introduction of Deep Learning for Information Retrieval Researchers in __LIARR 2
 
 ## 1. ABSTRACT
 
-This paper provides detailed suggestions to create an Image Search Engine with Deep Learning.  ere are still few a empts with Deep Learning on a search engine. Here is a good idea of an extremely easy way of building an image search with Elasticsearch and Keras on Jupyter Notebook. So, it is demonstrated how an image search engine can be created where Keras is used to extract features from images, and Elasticsearch is used for indexing and retrieval. 
+This paper provides detailed suggestions to create an Image Search Engine with Deep Learning. There are still few attempts with Deep Learning on a search engine. Here is a good idea of an extremely easy way of building an image search with Elasticsearch and Keras on Jupyter Notebook. So, it is demonstrated how an image search engine can be created where Keras is used to extract features from images, and Elasticsearch is used for indexing and retrieval. 
 
-To demonstrate how easily this can be achieved, Jupyter Notebook is used with two open source libraries, Keras and Elasticsearch.  en, the image search engine can search relevant images by images or keywords. In our approach, keras is regarded as analysis which is a process of converting an image into tokens or terms which are added to the inverted index for searching.
+To demonstrate how easily this can be achieved, Jupyter Notebook is used with two open source libraries, Keras and Elasticsearch. Then, the image search engine can search relevant images by images or keywords. In our approach, keras is regarded as analysis which is a process of converting an image into tokens or terms which are added to the inverted index for searching.
 
 ## 2. FEATURES
 
-Image features are extracted by VGG16 [6] model on Keras. VGG team achieved an excellent result with VGG16 model in ILSVRC- 2014 [2] competition. Image features are 1, 000 kinds of ImageNet classes(synsets) which are employed by VGG16 model. Image fea- tures which really mean ImageNet class tags are used as word fea- tures.  erefore, it is easy to modify using deep image representa- tions or other deep features.
+Image features are extracted by VGG16 [6] model on Keras. VGG team achieved an excellent result with VGG16 model in ILSVRC- 2014 [2] competition. Image features are 1, 000 kinds of ImageNet classes(synsets) which are employed by VGG16 model. Image features which really mean ImageNet class tags are used as word features. Therefore, it is easy to modify using deep image representations or other deep features.
 
 synsets:　http://image-net.org/challenges/LSVRC/2014/browse-synsets
 
-The VGG16 model for Keras is pre-trained, which model of the 16-leyers network is used by the VGG team in the ILSVRC-2014. Keras with the VGG16 model calculates and returns tuple of class(synset) and probability from an image.  ere are pre-de ned 1,000 classes.  ese classes are used as features for a feature vector on Elasticsearch.
+The VGG16 model for Keras is pre-trained, which model of the 16-leyers network is used by the VGG team in the ILSVRC-2014. Keras with the VGG16 model calculates and returns tuple of class(synset) and probability from an image. There are pre-defined 1,000 classes. These classes are used as features for a feature vector on Elasticsearch.
 
 ## 3. ALGORITHMS
 
@@ -101,7 +101,7 @@ If you want to check the version, just type 'python -c "import tensorflow as tf;
 ## 3. DEMONSTRATION
 
 First of all, Kaggle dogs-vs-cats dataset should be downloaded on your machine.
-The indexing function is composed of Keras and Elasticsearch, which indexes dog and cat images as a search target. Keras plays a role of feature extraction.  Then, Elasticsearch has an index for image file retrieval.
+The indexing function is composed of Keras and Elasticsearch, which indexes dog and cat images as a search target. Keras plays a role of feature extraction. Then, Elasticsearch has an index for image file retrieval.
 
 ### 3.1 Download Images
 
@@ -337,7 +337,7 @@ searchimg(filename, 10)
 
 1. elastic. 2017. Elasticsearch: RESTful, Distributed Search & Analytics. (2017). https://www.elastic.co/ [Online; accessed 19-June-2017].
 2. ImageNet. 2014. Large Scale Visual Recognition Challenge (ILSVRC). (2014). http://www.image-net.org/challenges/LSVRC/
-3. Jupyter. 2017.  e Jupyter Notebook. (2017). h p://jupyter.org/ [Online; ac- cessed 19-June-2017].
+3. Jupyter. 2017. The Jupyter Notebook. (2017). h p://jupyter.org/ [Online; ac- cessed 19-June-2017].
 4. Kaggle. 2014. Dogs vs. Cats. (2014). https://www.kaggle.com/c/dogs-vs-cats
-5. keras. 2014. Keras:  e Python Deep Learning library. (2014). h ps://keras.io/ [Online; accessed 19-June-2017].
+5. keras. 2014. Keras: The Python Deep Learning library. (2014). h ps://keras.io/ [Online; accessed 19-June-2017].
 6. Karen Simonyan and Andrew Zisserman. 2014. Very Deep Convolutional Networks for Large-Scale Image Recognition. CoRR abs/1409.1556 (2014). http://arxiv.org/abs/1409.1556
