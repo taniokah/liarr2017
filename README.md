@@ -56,6 +56,10 @@ If you want to check the version, just type 'curl --silent -XGET http://localhos
     $ curl --silent -XGET http://localhost:9200 2>&1 | grep "number"
         "number" : "5.4.1",
 
+Additionally, we need a python client of Elasticsearch. So, just type 'pip install elasticsearch'
+
+    $ pip install elasticsearch
+
 ### 2.3 Keras
 
 Keras is the Python deep learning library. Keras is compatible with: Python 2.7-3.5 now.
