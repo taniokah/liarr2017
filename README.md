@@ -201,12 +201,16 @@ es = Elasticsearch(host='localhost', port=9200)
 
 ### 3.6 Function Declaration for Index
 
+"settings" is revised following: https://discuss.elastic.co/t/total-fields-limit-setting/53004
+
 ````python
 def createindex(indexname):
     if es.indices.exists(index=indexname):
         es.indices.delete(index=indexname)
     es.indices.create(index=indexname,  body={
-        "index.mapping.total_fields.limit": 10000
+        "settings": {
+            "index.mapping.total_fields.limit": 10000
+        }
     })
 
 def loadimages(directory):
